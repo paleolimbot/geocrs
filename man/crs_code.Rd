@@ -3,20 +3,29 @@
 \name{crs_code}
 \alias{crs_code}
 \alias{crs_proj4}
+\alias{as_crs_proj4}
 \alias{crs_wkt}
+\alias{as_crs_wkt}
 \alias{crs_json}
+\alias{as_crs_json}
 \title{Construct CRS objects}
 \usage{
 crs_code(code, auth_name = "EPSG")
 
 crs_proj4(proj4string)
 
+as_crs_proj4(x, ...)
+
 crs_wkt(
   wkt,
   type = c("unknown", "WKT2:2015", "WKT2:2019", "WKT1:GDAL", "WKT1:ESRI")
 )
 
+as_crs_wkt(x, ...)
+
 crs_json(json)
+
+as_crs_json(x, ...)
 }
 \arguments{
 \item{code}{A code used to describe a CRS, as perscribed by the
@@ -25,6 +34,10 @@ authority \code{auth_name}}
 \item{auth_name}{An authority. Defaults to EPSG.}
 
 \item{proj4string}{A PROJ4 string.}
+
+\item{x}{An object that can be interpreted as a CRS}
+
+\item{...}{Unused}
 
 \item{wkt}{Various flavours of WKT}
 

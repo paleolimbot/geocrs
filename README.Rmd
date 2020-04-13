@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# geocrs
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+The goal of geocrs is to provide tools for the basic validation and manipulation of coordinate reference system objects. It doesn't require a copy of PROJ, but does contain a partial copy of the latest PROJ database.
+
+## Installation
+
+You can install the development version of geocrs from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("paleolimbot/geocrs")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(geocrs)
+
+# create a CRS by guessing the input
+as_crs(4326)
+as_crs("EPSG:4326")
+as_crs("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+```
+
+Basic validation:
+
+```{r, error=TRUE}
+crs_code(0)
+crs_code(4326, auth_name = "ESPG")
+crs_json("wheee")
+```
+
+Basic conversion:
+
+```{r}
+as_crs_proj4(4326)
+as_crs_wkt(4326, type = "WKT2:2019")
+as_crs_json(4326)
+```
+

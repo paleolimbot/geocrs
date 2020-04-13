@@ -1,0 +1,15 @@
+Package: geocrs
+Title: Create and Validate Coordinate Reference System Definitions
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Dewey",
+           family = "Dunnington",
+           role = c("aut", "cre"),
+           email = "dewey@fishandwhistle.net",
+           comment = c(ORCID = "0000-0002-9415-4582"))
+Description: Creates and validates Coordinate Reference System (CRS) definitions.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2

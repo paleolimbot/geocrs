@@ -17,3 +17,5 @@ Depends:
     R (>= 2.10)
 Imports: 
     jsonlite
+URL: https://github.com/paleolimbot/geocrs
+BugReports: https://github.com/paleolimbot/geocrs/issues

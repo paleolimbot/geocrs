@@ -112,18 +112,18 @@ json_aoi <- map_dfr(
 
 crs_codes <- tibble(auth_name = crs_view$auth_name, code = crs_view$code)
 
-geoproj_crs_view <- crs_view
-geoproj_crs_area_of_use <- bind_cols(crs_codes, json_aoi)
-geoproj_crs_json <- bind_cols(crs_codes, tibble(as_json = json))
-geoproj_crs_proj4 <- bind_cols(crs_codes, tibble(as_proj4 = proj4))
-geoproj_crs_wkt2 <- bind_cols(crs_codes, tibble(wkt2 = wkt2))
-geoproj_crs_wkt_gdal <- bind_cols(crs_codes, tibble(wkt_gdal = wkt_gdal))
+geocrs_crs_view <- crs_view
+geocrs_crs_area_of_use <- bind_cols(crs_codes, json_aoi)
+geocrs_crs_json <- bind_cols(crs_codes, tibble(as_json = json))
+geocrs_crs_proj4 <- bind_cols(crs_codes, tibble(as_proj4 = proj4))
+geocrs_crs_wkt2 <- bind_cols(crs_codes, tibble(wkt2 = wkt2))
+geocrs_crs_wkt_gdal <- bind_cols(crs_codes, tibble(wkt_gdal = wkt_gdal))
 
-usethis::use_data(geoproj_crs_view, overwrite = TRUE)
-usethis::use_data(geoproj_crs_area_of_use, overwrite = TRUE)
-usethis::use_data(geoproj_crs_json, overwrite = TRUE)
-usethis::use_data(geoproj_crs_proj4, overwrite = TRUE)
-usethis::use_data(geoproj_crs_wkt2, overwrite = TRUE)
-usethis::use_data(geoproj_crs_wkt_gdal, overwrite = TRUE)
+usethis::use_data(geocrs_crs_view, overwrite = TRUE)
+usethis::use_data(geocrs_crs_area_of_use, overwrite = TRUE)
+usethis::use_data(geocrs_crs_json, overwrite = TRUE)
+usethis::use_data(geocrs_crs_proj4, overwrite = TRUE)
+usethis::use_data(geocrs_crs_wkt2, overwrite = TRUE)
+usethis::use_data(geocrs_crs_wkt_gdal, overwrite = TRUE)
 
 DBI::dbDisconnect(db)
